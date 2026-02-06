@@ -13,23 +13,51 @@
 
     // Create function, happyBirthday, that outputs "Happy Birthday to you!" using the innerHTML property
 	// Look at the code from last week's assignment if you're unsure of how to use innerHTML
-
+	// Get references to your input field and the output container
+	const button = document.getElementById("myButton")
+	function happyBirthday() {
+		output.innerHTML += "Happy Birthday to you! ";
+	}
+	//button.addEventListener("click", happyBirthday);
 
     // Create function, birthdayName, that receives an argument from the nameInput input field
 	// and outputs a personalized "Happy Birthday dear, <name>!" using the innerHTML property"
 
 
+	function birthdayName() {
+		let name = nameInput.value;
+
+		output.innerHTML += `Happy Birthday dear, ${name}! `;
+		}
+	//button.addEventListener("click", birthdayName)
 	// Create function, personalizedSong, that receives two arguments, age and name.
 	//
+	output_song = document.getElementById("output")
+	function agemake (age, name) {
+		output.innerHTML += `You're ${age} years old today!`;
+	}
 	// The function should then output a personalized message,  "You're <age> years old today!" and 
 	// assemble the personalized song using the functions you created:
-	//
+
+
 	// "You're <age> years old today!" outputs using innerHTML, using the actual age received by the user
 	// Call the happyBirthday function 
 	// Call the happyBirthday function again
 	// Call the birthdayName function, using the actual name received form the user
 	// Call the happyBirthday function
-
+	function personalizedsong(age, name) {
+		agemake(age);
+		happyBirthday();
+		happyBirthday();
+		birthdayName(name);
+		happyBirthday();
+	}
+	button.addEventListener("click", function () {
+		output.innerHTML = "";
+		const name = nameInput.value;
+		const age = ageInput.value;
+			personalizedsong(age, name);
+		});
 
     // Add an event listener to myButton that, once clicked, executes an anomymous function.
 	//
